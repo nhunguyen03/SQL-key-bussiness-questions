@@ -13,7 +13,11 @@ This project only focuses on a few columns rather than all columns. The purpose 
 
 ## II. Exploring the Dataset
 This project revolves around 8 key business questions corresponding to 8 queries.
+
+**Context 1**: A retail business has recently launched an advertising campaign to increase website traffic. The marketing team requests to measure the effectiveness of the campaign through three metrics: **visits, pageviews, and transactions**
+
 ### Question 1: Calculate total visit, pageview, transaction and revenue for January, February and March 2017 order by month
+
 **SQL code**
 - [_table_suffix](https://cloud.google.com/bigquery/docs/querying-wildcard-tables): often used in BigQuery, refers to a special parameter that allows you to specify a suffix for table names. This is particularly useful for querying across multiple tables with a common naming pattern.
 ![image](https://github.com/user-attachments/assets/1b138543-3362-466a-b04c-3ce31ef6fc51)
@@ -23,6 +27,7 @@ This project revolves around 8 key business questions corresponding to 8 queries
 
 ![image](https://github.com/user-attachments/assets/0d85268f-b1d9-494b-aefd-57748a02ac99)
 
+**Context 2**: After the phase of attracting customers to the website (**Question 1**), the second phase will require analyzing which traffic sources bring in the most customers (**Question 2**) and the highest revenue (**Question 3**). From there, the focus will be on strengthening the advertising campaign on effective traffic sources, while eliminating inefficient sources to save costs.
 
 ### Question 2: Bounce rate per traffic source in July 2017
 **SQL code**
@@ -49,6 +54,8 @@ This project revolves around 8 key business questions corresponding to 8 queries
 ![image](https://github.com/user-attachments/assets/30f7ec43-5747-4d90-91a1-2e0d35dfe880)
 
 
+**Context 3**: After selecting the most effective traffic sources (in terms of revenue and quantity) to focus on (**Question 2, 3**), the next phase is to assess whether the website content is engaging enough or meets users' needs (**Question 4**). This will be measured through the **pageviews metric** of both purchasers and non-purchasers. If the pageviews of non-purchasers are lower than those of purchasers, it indicates that the website may need adjustments in terms of information or offer additional promotions to encourage customer conversion.
+
 ### Question 4: Average number of product pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017
 **SQL code**
 - Define **Purchaser**: customers have more than 1 transaction and product revenue is not null in July 2017. 
@@ -63,6 +70,7 @@ This project revolves around 8 key business questions corresponding to 8 queries
 
 ![image](https://github.com/user-attachments/assets/deb85a35-64e8-49d1-892b-e1c0cf056f84)
 
+**Context 4**: In July, the company decided to run a promotional campaign to clear out inventory. The Sales team wants to measure the effectiveness of the campaign through two metrics: the average number of orders per customer and the average spending per session (**Question 5, 6**)
 
 ### Question 5: Average number of transactions per user that made a purchase in July 2017
 **SQL code**
@@ -103,6 +111,8 @@ When I **SELECT DISTINCT** fullVisitorId, it shows 3 people, but if I **SELECT**
 **Query result**
 
 ![image](https://github.com/user-attachments/assets/70b63c3e-25a8-4bc5-afe8-d964aa946bb8)
+
+**Context 5**: The company ran a campaign aimed at boosting the purchase rate in March 2017. The Sales team wants to know if there are any differences in how customers interacted over time during the campaign compared to before the campaign (**Question 8**). This requires using a cohort map to understand customer interactions and compare March with the previous two months (January and February).
 
 ### Question 8: Calculate cohort map from pageview to addtocart to purchase in last 3 month.
 **SQL code**
